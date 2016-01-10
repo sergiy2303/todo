@@ -1,0 +1,9 @@
+h3 Welcome into TODO list!
+= link_to 'Create new work', new_work_path
+- if works
+  - works.each do |work|
+    p= work.description
+    p= work.created_at
+    =link_to 'delete', work_path(work), method: 'delete'
+- else
+  p Nothing to do

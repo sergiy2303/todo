@@ -7,4 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    - if user_signed_in?
+      p
+        = link_to 'Log out', destroy_user_session_path, method: 'delete'
     = yield
