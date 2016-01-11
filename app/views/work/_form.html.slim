@@ -1,4 +1,4 @@
-= form_for :work, url: { action: :create }, authenticity_token: true do |f|
-  = f.text_field :description
-  = f.submit 'Save', data: { disable: true }
-= link_to 'Cancel', root_path
+= form_for work, url: { action: action }, authenticity_token: true do |f|
+  = f.text_field :description, class: 'form-control'
+  = f.submit 'Save', data: { disable: true }, class: 'btn btn-success'
+= link_to 'Cancel', root_path, class: 'btn btn-default'

@@ -1,3 +1,26 @@
 // Place all the styles related to the work controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.work-description {
+  padding-left: 0px;
+}
+a.new-work {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.todo-list {
+  margin: 10px;
+}
+.work {
+  background-color: #f7f7f7;
+  margin: 0px;
+  .work-date {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .work-body {
+    @extend .work-date;
+  }
+}
