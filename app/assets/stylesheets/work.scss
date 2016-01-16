@@ -15,16 +15,35 @@ a.new-work {
 }
 .work {
   background-color: #f7f7f7;
-  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 7px;
   .work-date {
     margin-left: 10px;
     margin-right: 10px;
+    font-style: italic;
+    color: #a0a0a0;
   }
   .work-body {
-    @extend .work-date;
+    margin-left: 10px;
+    margin-right: 10px;
+    a {
+      font-size: 1.4em;
+      color: #707070;
+      text-decoration: none;
+    }
   }
 }
 
 .complete {
-  background-color: red;
+  background-color: #fafafa;
+  text-decoration: line-through;
+}
+.col-xs-1.submit-button {
+  margin-top: 5px;
+  padding-left: 0px;
+  span.glyphicon.glyphicon-ok {
+    cursor: pointer;
+  }
 }

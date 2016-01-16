@@ -1,1 +1,1 @@
-$('.create-form').html("<%= j(render 'form', action: 'update') %>")
+$('<%= "##{@work.id} .work-body" %>').html("<%= j(render 'form', action: 'update') %>")

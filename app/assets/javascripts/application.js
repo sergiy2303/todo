@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
+  e.preventDefault();
+  $(e.target).parent().parent().find('form').submit();
+})

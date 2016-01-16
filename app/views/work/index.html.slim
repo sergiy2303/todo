@@ -1,5 +1,7 @@
 h3.text-center Welcome into TODO list!
-.create-form
-  = render 'form', action: 'create'
-.todo-list
-  = render 'works'
+.row
+  .create-form.col-xs-10.col-xs-offset-1
+    = render 'form', action: 'create'
+.todo-list.row
+  .col-xs-12
+    = render 'works'

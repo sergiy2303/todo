@@ -1,3 +1,5 @@
-= form_for @work, url: { action: action }, authenticity_token: true, remote: true do |f|
-  = f.text_field :description, class: 'form-control'
-  = f.submit 'Save', data: { disable: true }, class: 'btn btn-success'
+.col-xs-11
+  = form_for @work, url: { action: action }, authenticity_token: true, remote: true do |f|
+    = f.text_field :description, class: 'form-control', placeholder: 'todo or not todo', data: { disable: true }
+.col-xs-1.submit-button
+  span.glyphicon.glyphicon-ok
