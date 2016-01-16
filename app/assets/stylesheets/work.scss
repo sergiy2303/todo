@@ -24,3 +24,7 @@ a.new-work {
     @extend .work-date;
   }
 }
+
+.complete {
+  background-color: red;
+}

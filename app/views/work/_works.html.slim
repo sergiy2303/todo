@@ -1,0 +1,19 @@
+= link_to 'Clear all finished', work_path(42), method: 'delete', class: 'btn btn-danger', remote: true
+- if @works
+  .works
+    - @works.each do |work|
+      .work class="#{work.complete ? 'complete' : ''}"
+        .row
+          .work-date.text-left
+            p= work.created_at
+          .text-right
+            = link_to 'x', toggle_complete_work_path(work), method: 'post', class: 'close delete-work', remote: true
+        .row.work-body
+          .work-description.col-xs-8
+            p= work.description
+          .work-actions.col-xs-4
+            = link_to 'edit', edit_work_path(work), class: 'btn btn-warning', remote: true
+  .text-center
+    = paginate @works, remote: true, theme: 'twitter-bootstrap-3'
+- else
+  p Nothing to do

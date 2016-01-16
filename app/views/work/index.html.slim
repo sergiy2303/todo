@@ -1,19 +1,5 @@
 h3.text-center Welcome into TODO list!
-.text-center
-  = link_to 'Create new work', new_work_path, class: 'new-work'
-- if works
-  .todo-list
-  - works.each do |work|
-    .work
-      .row
-        .work-date.text-left
-          p= work.created_at
-        .text-right
-          = link_to 'x', work_path(work), method: 'delete', class: 'close'
-      .row.work-body
-        .work-description.col-xs-8
-          p= work.description
-        .work-actions.col-xs-4
-          = link_to 'edit', edit_work_path(work), class: 'btn btn-warning'
-- else
-  p Nothing to do
+.create-form
+  = render 'form', action: 'create'
+.todo-list
+  = render 'works'

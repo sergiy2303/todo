@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :work, except: :index
+  resources :work, except: :index do
+    post :toggle_complete, on: :member
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
