@@ -27,6 +27,7 @@ gem 'devise'
 gem 'slim'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'bourbon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

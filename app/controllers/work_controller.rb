@@ -35,8 +35,7 @@ class WorkController < ApplicationController
 
   def toggle_complete
     @work.complete ? @work.update(complete: false) : @work.update(complete: true)
-    render json: {'work' => '54'}
-    head 200
+    render json: { 'completed_works' => completed_works? }
   end
 
   private

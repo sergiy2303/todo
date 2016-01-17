@@ -22,7 +22,12 @@ $(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
 
 $(document).on('click', '.image-confirm', function(e) {
   e.preventDefault();
-  $.ajax($(e.target).data('url'), {method: 'post'}).then(function () {
+  $.ajax($(e.target).data('url'), {method: 'post'}).then(function (data) {
+    if (data.completed_works) {
+      $('.clear-all-button').removeClass('hide');
+    } else {
+      $('.clear-all-button').addClass('hide');
+    }
     $(e.target).toggleClass('confirmed');
     $(e.target).parent().parent().toggleClass('complete')
   });
