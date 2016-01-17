@@ -4,13 +4,16 @@
 - if @works
   .works
     - @works.each do |work|
-      .work class="#{work.complete ? 'complete' : ''}" id=work.id
-        .row
-          .work-date.text-left.col-xs-12
-            p= work.created_at.to_time.strftime("%A, %B %d, %Y at %H:%M")
-        .row.work-body
-          .work-description.col-xs-8
-            = link_to work.description, edit_work_path(work), remote: true
+      .work.row class="#{work.complete ? 'complete' : ''}" id=work.id
+        .work-image.col-xs-1
+          .image-confirm class="#{work.complete ? 'confirmed' : ''}" data-id="#{work.id}" data-url="#{toggle_complete_work_path(work)}"
+        .work-content.col-xs-11
+          .row
+            .work-date.text-left.col-xs-12
+              p= work.created_at.to_time.strftime("%A, %B %d, %Y at %H:%M")
+          .row.work-body
+            .work-description.col-xs-8
+              = link_to work.description, edit_work_path(work), remote: true
   .text-center
     = paginate @works, remote: true, theme: 'twitter-bootstrap-3'
 - else

@@ -35,7 +35,8 @@ class WorkController < ApplicationController
 
   def toggle_complete
     @work.complete ? @work.update(complete: false) : @work.update(complete: true)
-    redirect_via_turbolinks_to root_path
+    render json: {'work' => '54'}
+    head 200
   end
 
   private
@@ -51,4 +52,10 @@ class WorkController < ApplicationController
   def find_work
     @work = works.find_by(id: params[:id]) || Work.new()
   end
+
+  def completed_works?
+    return true unless current_user.works.where(complete: true).count.zero?
+    false
+  end
+  helper_method :completed_works?
 end

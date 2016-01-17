@@ -19,3 +19,11 @@ $(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
   e.preventDefault();
   $(e.target).parent().parent().find('form').submit();
 })
+
+$(document).on('click', '.image-confirm', function(e) {
+  e.preventDefault();
+  $.ajax($(e.target).data('url'), {method: 'post'}).then(function () {
+    $(e.target).toggleClass('confirmed');
+    $(e.target).parent().parent().toggleClass('complete')
+  });
+})
