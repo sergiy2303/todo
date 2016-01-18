@@ -15,20 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
+$(document).on('click', 'span.glyphicon.glyphicon-ok', (e) => {
   e.preventDefault();
-  $(e.target).parent().parent().find('form').submit();
+  $(e.target).closest('form').submit();
 })
 
-$(document).on('click', '.image-confirm', function(e) {
+$(document).on('click', '.image-confirm', (e) => {
   e.preventDefault();
-  $.ajax($(e.target).data('url'), {method: 'post'}).then(function (data) {
-    if (data.completed_works) {
-      $('.clear-all-button').removeClass('hide');
-    } else {
-      $('.clear-all-button').addClass('hide');
-    }
+  $.ajax($(e.target).data('url'), {method: 'post'}).then((data) => {
+    $('.clear-all-button').toggleClass('hide', !data.completed_works);
     $(e.target).toggleClass('confirmed');
-    $(e.target).parent().parent().toggleClass('complete')
+    $(e.target).closest('.work').toggleClass('complete');
   });
 })

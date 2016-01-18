@@ -22,9 +22,6 @@ class WorkController < ApplicationController
     redirect_via_turbolinks_to root_path
   end
 
-  def edit
-  end
-
   def update
     if @work.update(work_params)
       redirect_via_turbolinks_to root_path
