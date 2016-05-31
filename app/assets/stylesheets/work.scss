@@ -64,9 +64,9 @@ a.new-work {
   vertical-align: middle;
   margin-left: -25px;
   cursor: pointer;
-  background:url('empty_red.png') no-repeat top left;
+  background:image-url('empty_red.png') no-repeat top left;
   &.confirmed {
-    background:url('finished_red.png') no-repeat top left;
+    background:image-url('finished_red.png') no-repeat top left;
   }
 }
 
