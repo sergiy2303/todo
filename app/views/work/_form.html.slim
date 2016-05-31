@@ -1,5 +1,5 @@
 .col-xs-11
-  = form_for @work, url: { action: action }, authenticity_token: true, remote: true do |f|
-    = f.text_field :description, class: 'form-control', placeholder: 'todo or not todo', data: { disable: true }
+  = form_for @work, url: { action: action }, authenticity_token: true, remote: true, data: { disable: true } do |f|
+    = f.text_field :description, class: 'form-control', placeholder: 'todo or not todo'
 .col-xs-1.submit-button
   span.glyphicon.glyphicon-ok

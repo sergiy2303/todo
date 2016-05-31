@@ -18,6 +18,7 @@
 $(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
   e.preventDefault();
   $('form.new_work').submit();
+  $('form.new_work')[0].reset();
 })
 
 $(document).on('click', '.image-confirm', function(e) {

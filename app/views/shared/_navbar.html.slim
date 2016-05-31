@@ -6,7 +6,7 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Lets do something!', root_path, class: 'navbar-brand', remote: true
+      = link_to 'Lets do something!', root_path, class: 'navbar-brand'
     - if user_signed_in?
       .nav.navbar-nav.navbar-right
-        = link_to 'Log out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
+        = link_to 'Log out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn', remote: true, data: { disable_with: 'loading...' }
