@@ -15,14 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('click', 'span.glyphicon.glyphicon-ok', (e) => {
+$(document).on('click', 'span.glyphicon.glyphicon-ok', function(e) {
   e.preventDefault();
   $('form.new_work').submit();
 })
 
-$(document).on('click', '.image-confirm', (e) => {
+$(document).on('click', '.image-confirm', function(e) {
   e.preventDefault();
-  $.ajax($(e.target).data('url'), {method: 'post'}).then((data) => {
+  $.ajax($(e.target).data('url'), {method: 'post'}).then(function(data) {
     $('.clear-all-button').toggleClass('hide', !data.completed_works);
     $(e.target).toggleClass('confirmed');
     $(e.target).closest('.work').toggleClass('complete');
