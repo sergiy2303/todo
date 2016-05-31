@@ -1,8 +1,8 @@
 .wrapper
   = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' } do |f|
     h2.form-signin-heading Please login
-    = f.email_field :email, autofocus: true, class: 'form-control'
-    = f.password_field :password, autocomplete: "off", class: 'form-control'
+    = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+    = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
     - if devise_mapping.rememberable?
       = f.check_box :remember_me
       |  
